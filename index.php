@@ -21,7 +21,12 @@
 
     echo $num1;
 
-    $result = $num1 * $num1 * MATH;
+    function createInteger($num) {
+        $result = $num * $num * MATH * MATH;
+        return $result;
+    }
+
+    $result = createInteger($num1);
     echo $result.'<br />';
 
     switch($result % 7){
@@ -47,7 +52,8 @@
             print "あまり6<br />";
     }
 
-    $nameList = array('健太','拓也','悠人');
+    //NOTE: キーの自動付与
+    $nameList = array(6 => '健太','拓也','悠人');
     foreach($nameList as $name){
         $name = '俺'.$name;
     }
@@ -57,6 +63,10 @@
     foreach($nameList as $name){
         print $name.'<br />';
     }
+
+    $nameList['13'] = '大和';
+    $nameList[] = '山川';
+    print_r($nameList);
 
 
     echo "テストですー"."テストです","テストですー";
