@@ -69,7 +69,35 @@
     print_r($nameList);
 
 
-    echo "テストですー"."テストです","テストですー";
+    echo "テストですー","テストです","テストですー,<br/>";
+
+    $now = new Direction();
+    $now->printDirection();
+    $now->setDirection("西");
+    $now->getDirection();
+
+    class Direction {
+        private $azimuth;
+
+
+        function __construct() {
+            $this -> azimuth = "南";
+        }
+
+        function setDirection($azimuth) {
+            $this->azimuth = $azimuth;
+            $this->printDirection();
+        }
+
+        function getDirection() {
+            print self::DEFAULT;
+        }
+
+        function printDirection() {
+            print "あなたのいる方角は".$this->azimuth. "です";
+        }
+    }
+
 ?>
 </body>
 
